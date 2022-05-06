@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <div id="navbar">
+        <ul>
+            <li><a class="renew" (click)="changeView1()"><i class="fa-solid fa-user"></i>User</a></li>
+            <li><a class="same"  [routerLink]="['/addinfo']">Home</a></li>
+            <li><a class="same"  [routerLink]="['/changepassword']">Change Password</a></li>
+            <li><a class="same" id="addinfo"  [routerLink]="['/feedback']">Contact Us</a></li>
+            <li><a routerLink="/login"  class="btn by "><i class="fa-solid fa-user-minus"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+    <img *ngIf="imgVisible" src="https://blog.bonus.ly/hubfs/employee-experience-featured-image.png" alt="Image">
+    
+
+ <div id="feedback" >
+    <div  class="contact">
+        <h2>Let's Start a Conversation</h2><br>
+        <h3>Ask how we can help you</h3>
+        <br>
+        <form [formGroup]="signupForm" class="contactform" (ngSubmit)="onSubmit()">
+            <div formGroupName="userData">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email" [(ngModel)]="feedback.email" formControlName="email" placeholder="name@example.com">
+                    <span *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched">
+                        Please enter valid email address
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput2">Full Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput2" [(ngModel)]="feedback.name" name="fullname" placeholder="Enter your Name" formControlName="name">
+                    <span *ngIf="!signupForm.get('userData.name').valid && signupForm.get('userData.name').touched">
+                        Please enter valid full name
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Suggestion Please</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="suggestion" [(ngModel)]="feedback.suggestion" rows="3" formControlName="suggestion"
+                        placeholder="Enter your feedback"></textarea>
+                        <span *ngIf="!signupForm.get('userData.suggestion').valid && signupForm.get('userData.suggestion').touched">
+                            Please tell us with minimum 20 characters
+                        </span>
+                </div>
+                <button type="submit" id="contactbtn"  class="btn btn-primary ">Submit</button>
+
+            </div>
+            
+
+    
+        </form>
+        <br>
+        <thead *ngIf="showdata">
+            <h5>Thank you for your feedback.</h5>
+
+        </thead>
+    
+    </div>
+ </div>  
+
+</body>
+
+</html>
+
+
+
+
+
+
+

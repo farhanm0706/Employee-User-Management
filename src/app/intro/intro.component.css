@@ -1,0 +1,35 @@
+div{
+    margin-left: 25%;
+    background:darkturquoise;
+    background: linear-gradient(90deg,darkturquoise,rgba(20, 238, 238, 0.89),100%);  
+    width: 750px;
+    height: 350px;
+    margin-top: 9.8%;
+    border-radius: 5px;
+    padding: 40px;
+    opacity: 0.9;
+}
+
+
+h2{
+    margin-left:35%;
+    color:white;
+
+}
+h3{
+    margin-left: 37%;
+}
+a{
+    color: black;
+}
+h1{
+    margin-left: 40px;
+}
+#container1{
+    background-image: url("https://blog.bonus.ly/hubfs/employee-experience-featured-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 725px;
+     width: 1517px;
+     margin: 0;
+}

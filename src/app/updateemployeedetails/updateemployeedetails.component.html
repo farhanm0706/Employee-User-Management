@@ -1,0 +1,139 @@
+
+
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    </head>
+    
+    <body>
+        <div id="navbar">
+            <ul>
+                <li><a class="renew" ><i class="fa-solid fa-user-gear"></i>Admin</a></li>
+                <li><a class="same"  [routerLink]="['/adduser']">Add User</a></li>
+                <li><a class="same"  [routerLink]="['/viewemployee']">View User</a></li>
+                <li><a class="same" id ="vieweempdet"[routerLink]="['/viewemployeedetails']">View User Details</a></li>
+                <li><a routerLink="/adminlogin"  class="btn by "><i class="fa-solid fa-user-minus"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div id="container1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="text-center">
+                                <h1>Update your details Here</h1>
+                            </div>
+            
+                            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                                <div  formGroupName="userData">
+                                    <h5>Personal Details</h5>
+                                    <div class="mb-3">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" class="form-control" name="fullName" id="name" formControlName="name"
+                                            [(ngModel)]="userdet.name" placeholder="Enter Full Name">
+                                            <span *ngIf="!signupForm.get('userData.name').valid && signupForm.get('userData.name').touched">
+                                                Please enter valid full name
+                                            </span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="mobile">Mobile Number</label>
+                                        <input type="number" class="form-control" id="mobile" name="mobileNo" formControlName="mobileNo"
+                                            [(ngModel)]="userdet.mobileNo" placeholder="Enter Mobile Number">
+                                            <span *ngIf="!signupForm.get('userData.mobileNo').valid && signupForm.get('userData.mobileNo').touched">
+                                                Please enter valid mobile number
+                                            </span>
+                                    </div>
+    
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" name="emailAddress" formControlName="email"
+                                            [(ngModel)]="userdet.email" aria-describedby="emailHelp"
+                                            placeholder="Enter Email Address">
+                                            <span *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched">
+                                                Please enter valid email address
+                                            </span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h5>Family Details</h5>
+    
+                                        <label for="father">Father Name</label>
+                                        <input type="text" class="form-control" id="father" name="fatherName" formControlName="fatherName"
+                                            [(ngModel)]="userdet.fatherName" placeholder="Enter Father Name ">
+                                            <span *ngIf="!signupForm.get('userData.fatherName').valid && signupForm.get('userData.fatherName').touched">
+                                                Please enter valid full name
+                                            </span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="mother">Mother Name</label>
+                                        <input type="text" class="form-control" id="moter" name="motherName" formControlName="motherName"
+                                            [(ngModel)]="userdet.motherName" placeholder="Enter Mother Name ">
+                                            <span *ngIf="!signupForm.get('userData.motherName').valid && signupForm.get('userData.motherName').touched">
+                                                Please enter valid full name
+                                            </span>
+                                    </div>
+                                    <h5>Banking related Details</h5>
+    
+                                    <div class="mb-3">
+                                        <label for="aadhar">Aadhar Number</label>
+                                        <input type="number" class="form-control" id="aadhar" name="aadharNo" formControlName="aadharNo"
+                                            [(ngModel)]="userdet.aadharNo" placeholder="Enter Aadhar Number ">
+                                            <span *ngIf="!signupForm.get('userData.aadharNo').valid && signupForm.get('userData.aadharNo').touched">
+                                                Please enter valid 12 digit aadhar number
+                                            </span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="pan">Pan Card Number</label>
+                                        <input type="text" class="form-control" id="pan" name="panNo" formControlName="panNo"
+                                            [(ngModel)]="userdet.panNo" placeholder="Enter PAN Number ">
+                                            <span *ngIf="!signupForm.get('userData.panNo').valid && signupForm.get('userData.panNo').touched">
+                                                Please enter valid pan number
+                                            </span>
+                                    </div>
+    
+                                    <div class="mb-3">
+                                        <label for="acc">Account Number</label>
+                                        <input type="number" class="form-control" id="acc" name="accNo" formControlName="accNo"
+                                            [(ngModel)]="userdet.accNo" placeholder="Enter Account Number ">
+                                            <span *ngIf="!signupForm.get('userData.accNo').valid && signupForm.get('userData.accNo').touched">
+                                                Please enter valid account number
+                                            </span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ifsc">IFSC Number</label>
+                                        <input type="text" class="form-control" id="ifsc" name="ifscNo" formControlName="ifscNo"
+                                            [(ngModel)]="userdet.ifscNo" placeholder="Enter IFSC Number ">
+                                            <span *ngIf="!signupForm.get('userData.ifscNo').valid && signupForm.get('userData.ifscNo').touched">
+                                                Please enter valid ifsc number
+                                            </span>
+                                    </div>
+                                    <br>
+    
+                                    <button type="reset" id="btn2" class="btn  btn-primary"><i
+                                            class="fa-solid fa-arrows-rotate"></i>Reset</button>
+    
+                                    <button type="submit" id="btn1" class="btn btn-primary "><i
+                                            class="fa-solid fa-marker"></i>
+                                        Save</button>
+                                    <br><br><br><br>
+    
+                                </div>
+    
+                            </form>
+            
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+    </body>
+    
+    </html>
+    
+

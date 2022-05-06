@@ -1,0 +1,45 @@
+.card{
+    border: none;
+    width: 550px;
+    padding: 40px;
+    position: absolute;
+    top:51%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:darkturquoise;
+    background: linear-gradient(90deg,darkturquoise,rgb(5, 134, 134),100%); 
+ }
+ .card  h1{
+     color: #fff;
+ }
+ label{
+     color: #fff;
+ }
+ button{
+     width: 100px;
+     margin-left: 38%;
+     position: absolute;
+     left: 110px;
+ }
+ 
+ #container1{
+    background-image: url("https://blog.bonus.ly/hubfs/employee-experience-featured-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 725px;
+     width: 1517px;
+     margin: 0;
+}
+#one{
+    position: absolute;
+    left: 195px;
+    font-size: large;
+    font-weight: 600;
+}
+#two{
+    font-size: large;
+    font-weight: 600;
+    margin: 0;
+    width: 100px;
+
+}

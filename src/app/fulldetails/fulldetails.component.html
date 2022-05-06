@@ -1,0 +1,57 @@
+
+    <html>
+
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        </head>
+        
+        <body>
+            <div id="navbar">
+                <ul>
+                    <li><a class="renew" ><i class="fa-solid fa-user-gear"></i>Admin</a></li>
+                    <li><a class="same"  [routerLink]="['/adduser']">Add User</a></li>
+                    <li><a class="same"  [routerLink]="['/viewemployee']">View User</a></li>
+                    <li><a class="same" id="viewuserdet" [routerLink]="['/viewemployeedetails']">View User Details</a></li>
+                    <li><a routerLink="/adminlogin"  class="btn by "><i class="fa-solid fa-user-minus"></i>Logout</a>
+                    </li>
+                </ul>
+            </div>
+         <div id="container1">
+            <div  class="contact">
+                <table >
+                    <h2>{{useremp.name}} Personal details</h2>
+                    <h4>Personal Details</h4>
+                    <div><b>Employee Id:        </b> <span>{{useremp.empId}}</span> </div>
+                     <div><b>Full Name:         </b> <span>{{useremp.name}}</span>  </div>                  
+                      <div><b>Mobile Number:    </b> <span>{{useremp.mobileNo}}</span> </div>
+                      <div><b>Email Address:    </b> <span>{{useremp.email}}</span></div>
+                    <h4>Family Details </h4>
+                    <div><b>Father Name:    </b>   <span>{{useremp.fatherName}}</span></div>
+                    <div><b>Mother Name:    </b>   <span>{{useremp.motherName}}</span></div>
+                    <h4>Account Details </h4>
+                    <div><b>Aadhar Number:    </b>   <span>{{useremp.aadharNo}}</span></div>
+                    <div><b>Pan Card Number:    </b>   <span>{{useremp.panNo}}</span></div>
+                    <div><b>Account Number:    </b>   <span>{{useremp.accNo}}</span></div>
+                    <div><b>IFSC Number:    </b>   <span>{{useremp.ifscNo}}</span></div>
+
+                    
+                    
+                    
+                    <button class="btn btn-primary" style="width:90px" [routerLink]="['/viewemployeedetails']">Back</button>
+                    
+        
+                </table>
+                <!-- <button class="btn btn-primary" style="width:90px" [routerLink]="['/uhome']">Back</button> -->
+            </div>
+         </div>
+           
+        </body>
+        
+        </html>
+        
+    
+
+
+
+

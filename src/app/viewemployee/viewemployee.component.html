@@ -1,0 +1,61 @@
+  
+  <html>
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    </head>
+    
+    <body>
+        <div id="navbar">
+            <ul>
+                <li><a class="renew" (click)="changeView1()"><i class="fa-solid fa-user-gear"></i>Admin</a></li>
+                <li><a class="same"  [routerLink]="['/adduser']">Add User</a></li>
+                <li><a class="same" id="viewuser" [routerLink]="['/viewemployee']">View User</a></li>
+                <li><a class="same" [routerLink]="['/viewemployeedetails']">View User Details</a></li>
+                <li><a class="same"  [routerLink]="['/viewfeedback']"> Feedback</a></li>
+
+                <li><a routerLink="/adminlogin"  class="btn by "><i class="fa-solid fa-user-minus"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+        <img *ngIf="imgVisible" src="https://blog.bonus.ly/hubfs/employee-experience-featured-image.png" alt="Image">
+    
+        <div id="container1">
+            <div  class="contact">
+                <thead>  <h2> Employee List</h2>   </thead>
+                <table class = "table table-striped">
+                    <thead>
+                        <tr>
+                            <th> Employee Id</th>
+                            <th> Email Id </th>
+                            <th> Password </th>
+                            <th > Actions </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let employee of addemp" >
+                            <td> {{ employee.employeeId }} </td>
+                            <td> {{ employee.email }} </td>
+                            <td> {{ employee.password }} </td>
+                            <td>
+                                <button (click) = "updateEmployee(employee.employeeId)" class = "btn btn-info"> Update</button>
+                                <button (click) = "deleteEmployee(employee.employeeId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                            
+                            </td>
+                        </tr>
+                    </tbody>
+        
+                </table>
+                <!-- <button class="btn btn-primary" style="width:90px" [routerLink]="['/uhome']">Back</button> -->
+            </div>
+
+        </div>
+        
+    
+        
+    </body>
+    
+    </html>
+    
+    
